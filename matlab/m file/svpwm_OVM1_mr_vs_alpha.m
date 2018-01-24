@@ -1,5 +1,4 @@
 clear all
-syms theta;
 Vs = sqrt(3)/2:0.001:1;
 Vdc = 1;
 temp = Vs.*Vs - 3/4;
