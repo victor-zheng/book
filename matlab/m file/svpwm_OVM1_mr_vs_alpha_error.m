@@ -1,5 +1,15 @@
 clear all
 Vs = sqrt(3)/2:0.001:1;
+
+alpha3 = 0:0.01:0.5236;
+alpha3_temp1 = sqrt(3);
+alpha3_temp2 = pi/6;
+alpha3_tempangle = alpha3_temp2-alpha3;
+alpha3_item1 = alpha3./cos(alpha3_tempangle);
+alpha3_item2 = log(tan(alpha3_temp2 + alpha3./2));
+MR1 = alpha3_temp1*(alpha3_item1 - alpha3_item2);
+
+
 Vdc = 1;
 temp = Vs.*Vs - 3/4;
 temp1 = (1/2)*Vs*Vdc;
@@ -38,5 +48,5 @@ end
 alpha2 = (-30.23*MI + 27.94).*(MI>=0.9068 & MI<0.9095) ...
     +(-8.58*MI + 8.23).*(MI>=0.9095 & MI<0.9485) ...
     +(-26.43*MI + 25.15).*(MI>=0.9485 & MI<0.9517);
-plot(MI,alpha,'r',MI,alpha2,'b')
+plot(MI,alpha,'r',MI,alpha2,'b',MR1,alpha3,'g')
 grid on
