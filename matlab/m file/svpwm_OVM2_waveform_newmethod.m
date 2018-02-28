@@ -1,7 +1,7 @@
 clear all
 
 theta=0:0.01:2*pi;
-Vs = 1.1;
+Vs = 1.4;
 Vdc = 1;
 y = sqrt((3/4)*Vs*Vs-(9/16)) - sqrt(3)/4;
 x = 1 + y / sqrt(3);
