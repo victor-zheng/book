@@ -1,8 +1,11 @@
 clear all
 
 %linear
-step_num = 1024;
+table_size = 100;
+step_num = table_size*10;
+
 Vs = linspace(sqrt(3)/2,sqrt(3),step_num);
+
 OVMMode2Flag = linspace(0,0,step_num);
 Vdc = 1;
 temp2 = (1/2)*Vdc;
@@ -84,7 +87,21 @@ for i = 1:num(2)
     Vref(i) = MI(i)/1.04596;
     Gain(i) = Vs(i)/Vref(i);
 end
-Vref_num = Vref.*16384;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%re-generate
+Vref_index = linspace(Vref(1),Vref(step_num),table_size);
+gain_table_data = linspace(Vref(1),Vref(step_num),table_size);
+
+for i = 1:table_size
+    for j = 1:(step_num - 1)
+        if (Vref_index(i) >=  Vref(j)) && (Vref_index(i) <  Vref(j+1))
+            gain_table_data(i) = Gain(j);
+            break;
+        end
+    end
+end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % output to a txt file
 
