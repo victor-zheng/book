@@ -197,9 +197,10 @@ fprintf(txtfile,'%s','/*the float number 1.0 equal to */');
 fprintf(txtfile,'%d',float1_0);
 fprintf(txtfile,'%s\n','*/');
 fprintf(txtfile,'%s\n','');
+
 %write table 1
 fprintf(txtfile,'%s', 'int16_t aOVMGain[');
-fprintf(txtfile,'%d', table_size);
+fprintf(txtfile,'%s', 'OVM_GAIN_ARRAY_SIZE');
 fprintf(txtfile,'%s\n', ']={\');
 
 line_num = 10;  %The data number in one row
@@ -218,7 +219,7 @@ fprintf(txtfile,'%s\n','');
 
 %write table 2
 fprintf(txtfile,'%s', 'int16_t aOVMHoldAngle[');
-fprintf(txtfile,'%d', alpha_table_size);
+fprintf(txtfile,'%s', 'OVM_ALPHA_ARRAY_SIZE');
 fprintf(txtfile,'%s\n', ']={\');
 
 line_num = 10;  %The data number in one row
