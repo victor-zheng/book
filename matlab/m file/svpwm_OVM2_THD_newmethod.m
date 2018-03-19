@@ -71,9 +71,9 @@ for i = 1:num(2)
        +(temp2).*(theta>=(5*pi/3 + alpha(i)) & theta<(2*pi - alpha(i))) ...%sector 6-2
        +(temp2).*(theta>=(2*pi - alpha(i)) & theta<=(2*pi));
    
-        h1 = thd(y1);
-        h2 = thd(y2);
-        h3 = thd(y3);
+        h1 = thd(y1,0.000001,6);
+        h2 = thd(y2,0.000001,6);
+        h3 = thd(y3,0.000001,6);
         point1(i) = power(10,h1/10);
         point2(i) = power(10,h2/10);
         point3(i) = power(10,h3/10);
