@@ -1,0 +1,3 @@
+       #ser = serial.Serial('COM7')
+        #self.textBrowser.setText(ser.name)
+        #ser.write(b'hello')
