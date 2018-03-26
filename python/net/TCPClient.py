@@ -1,7 +1,7 @@
 import socket
 import sys
 
-HOST, PORT = "192.168.1.103", 8081
+HOST, PORT = "47.93.237.174", 8082
 data = " ".join(sys.argv[1:])
 
 # Create a socket (SOCK_STREAM means a TCP socket)
