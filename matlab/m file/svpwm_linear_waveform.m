@@ -1,7 +1,7 @@
 clear all
 
 theta=0:0.01:2*pi;
-Vs = sqrt(2)/2;
+Vs = sqrt(3)/2;
 Vdc = 1;
 %constant
 temp1 = (1/2)*Vs*Vdc;
@@ -15,5 +15,4 @@ temp4 = 1/sqrt(3);
     +temp1*(-cos(theta-4*pi/3)+temp3*sin(theta-4*pi/3)).*(theta>=(4*pi/3) & theta<(5*pi/3)) ...%sector 5
     +temp1*(cos(theta-5*pi/3)+temp4*sin(theta-5*pi/3)).*(theta>=(5*pi/3) & theta<=(2*pi));%sector 6
 plot(theta,y,'r')
-
 grid on

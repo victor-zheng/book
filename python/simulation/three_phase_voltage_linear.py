@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 period_step = 100  # simulation step number in one period
 period_num = 2     # how many cycles you want to calculate
 Vdc = 1            # bus voltage
-Vref = 1.732        # regulator output the voltage reference
+Vref = 0.732        # regulator output the voltage reference
 
 
 #generate input variable
